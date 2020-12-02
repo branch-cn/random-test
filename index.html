@@ -9,16 +9,13 @@
     // init Branch
     branch.init('key_live_cjJYI5F72kURkQwfP96BYllhCAcS2Tng', function(err, data) {
       var UA = window.navigator.userAgent.toLocaleLowerCase ()
-      if ( true /*/huawei|honor/.test ( UA ) && !data.has_app */){ 
+      if (/huawei|honor/.test ( UA ) && !data.has_app){ 
         document.getElementById("h2text").innerText = "huawe devivce and not installed"
         branch.setBranchViewData({data: {'$android_url': 'https://appgallery.huawei.com/#/app/C101278943',}});
-        branch.setBranchViewData({data: {'$ios_url': 'https://appgallery.huawei.com/#/app/C101278943',}});
       }else {
         document.getElementById("h2text").innerText = "not a huawei devivce or app installed"
       }
     })
-
-    
 
   </script>
 </head>
