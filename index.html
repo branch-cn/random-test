@@ -9,7 +9,7 @@
     // init Branch
     branch.init('key_live_cjJYI5F72kURkQwfP96BYllhCAcS2Tng', function(err, data) {
       var UA = window.navigator.userAgent.toLocaleLowerCase ()
-      if ( /huawei|honor/.test ( UA ) && !data.has_app){ 
+      if ( true /*/huawei|honor/.test ( UA ) && !data.has_app */){ 
         document.getElementById("h2text").innerText = "huawe devivce and not installed"
         branch.setBranchViewData({data: {'$android_url': 'https://branchdemo2.app.link/XeoKawxPSbb',}});
       }else {
