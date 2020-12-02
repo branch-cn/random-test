@@ -12,7 +12,7 @@
       if ( true /*/huawei|honor/.test ( UA ) && !data.has_app */){ 
         document.getElementById("h2text").innerText = "huawe devivce and not installed"
         branch.setBranchViewData({data: {'$android_url': 'https://appgallery.huawei.com/#/app/C101278943',}});
-        document.getElementById("h2text").innerText = "$android_url was set to " + rach.linkData.data.$android_url;
+        branch.setBranchViewData({data: {'$ios_url': 'https://appgallery.huawei.com/#/app/C101278943',}});
       }else {
         document.getElementById("h2text").innerText = "not a huawei devivce or app installed"
       }
