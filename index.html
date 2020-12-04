@@ -10,7 +10,7 @@
     let branch_live_key = 'key_live_cjJYI5F72kURkQwfP96BYllhCAcS2Tng';
     
     branch.init(branch_live_key, function(err, data) {
-      document.getElementById("h2text").innerText = data
+      document.getElementById("h2text").innerText = JSON.stringify(data)
     })
 
     function recognizeHuawei() {
