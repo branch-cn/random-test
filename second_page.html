@@ -4,10 +4,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random test page</title>
   <script>
+let clickTimestampKey = 'clickTimestamp'
+let clickTimestamp = localStorage.getItem(clickTimestampKey)
+document.getElementById("h2text").innerText = clickTimestamp
 
   </script>
 </head>
 <body>
+  <h2 id="h2text" ></h2>
   <a href="https://maidinchina.github.io/random-test/index.html?_branch_view_id=862212134474143745">journey page</a>
 </body>
 </html>
