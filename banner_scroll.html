@@ -31,7 +31,9 @@ branch.journeys_title = "section 2"
   } else if (isInViewport(sec3)){
 branch.journeys_title = "section 3"
   } else if (isInViewport(sec4)){
-branch.journeys_title = "section 4"
+branch.closeJourney(function(err, data) {
+  console.log(err, data);
+});
   }
 }, false);
 
