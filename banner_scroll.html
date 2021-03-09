@@ -26,10 +26,42 @@ var sec4 = document.querySelector('#section4');
 window.addEventListener('scroll', function (event) {
 	if (isInViewport(sec1)) {
 		branch.journeys_title = "section 1"
+    
 	} else if (isInViewport(sec2)){
 branch.journeys_title = "section 2"
   } else if (isInViewport(sec3)){
-branch.journeys_title = "section 3"
+// branch.journeys_title = "section 3"
+// close
+branch.closeJourney(function(err, data) {
+  console.log(err, data);
+});
+
+
+
+// optional additional deep link data
+var linkData = {
+  campaign: 'content 123',
+  channel: 'facebook',
+  feature: 'dashboard',
+  stage: 'new user',
+  tags: [ 'tag1', 'tag2', 'tag3' ],
+  alias: '',
+  data: {
+    'custom_bool': true,
+    'custom_int': Date.now(),
+    'custom_string': 'hello',
+    '$og_title': 'Title',
+    '$og_description': 'Description',
+    '$og_image_url':'http://lorempixel.com/400/400'
+  }
+};
+
+branch.setBranchViewData(linkData);
+
+// reopen
+branch.track("pageview");
+
+
   } else if (isInViewport(sec4)){
 branch.closeJourney(function(err, data) {
   console.log(err, data);
