@@ -28,44 +28,15 @@ window.addEventListener('scroll', function (event) {
 		branch.journeys_title = "section 1"
     
 	} else if (isInViewport(sec2)){
-branch.journeys_title = "section 2"
+    branch.journeys_title = "section 2"
   } else if (isInViewport(sec3)){
-// branch.journeys_title = "section 3"
-// close
-branch.closeJourney(function(err, data) {
-  console.log(err, data);
-});
-
-
-
-// optional additional deep link data
-var linkData = {
-  campaign: 'content 123',
-  channel: 'facebook',
-  feature: 'dashboard',
-  stage: 'new user',
-  tags: [ 'tag1', 'tag2', 'tag3' ],
-  alias: '',
-  data: {
-    'custom_bool': true,
-    'custom_int': Date.now(),
-    'custom_string': 'hello',
-    '$og_title': 'Title',
-    '$og_description': 'Description',
-    '$og_image_url':'http://lorempixel.com/400/400'
-  }
-};
-
-branch.setBranchViewData(linkData);
-
-// reopen
-branch.track("pageview");
+  // branch.journeys_title = "section 3"
 
 
   } else if (isInViewport(sec4)){
-branch.closeJourney(function(err, data) {
-  console.log(err, data);
-});
+    branch.closeJourney(function(err, data) {
+      console.log(err, data);
+    });
   }
 }, false);
 
@@ -78,11 +49,46 @@ branch.closeJourney(function(err, data) {
     branch.init(branch_live_key, function(err, data) {
       document.getElementById("h2text").innerText = clickTimestamp
     })
+
+    function showJourney() {
+
+  // close
+  branch.closeJourney(function(err, data) {
+    console.log(err, data);
+  });
+
+
+
+  // optional additional deep link data
+  var linkData = {
+    campaign: 'content 123',
+    channel: 'facebook',
+    feature: 'dashboard',
+    stage: 'new user',
+    tags: [ 'tag1', 'tag2', 'tag3' ],
+    alias: '',
+    data: {
+      'custom_bool': true,
+      'custom_int': Date.now(),
+      'custom_string': 'hello',
+      '$og_title': 'Title',
+      '$og_description': 'Description',
+      '$og_image_url':'http://lorempixel.com/400/400'
+    }
+  };
+
+  branch.setBranchViewData(linkData);
+
+  // reopen
+  branch.track("pageview");
+    }
   </script>
 </head>
 <body>
   <div id="contianer">
         <div id="section1">
+        <button onclick="myFunction()">Click me</button>
+        <button onclick="myFunction()">Click me</button>
         <p>
         1111111111111111111111111111
         1111111111111111111111111
