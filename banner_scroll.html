@@ -50,7 +50,7 @@ window.addEventListener('scroll', function (event) {
       document.getElementById("h2text").innerText = clickTimestamp
     })
 
-    function showJourney() {
+    function showJourney(journeyTitle) {
 
   // close
   branch.closeJourney(function(err, data) {
@@ -71,7 +71,7 @@ window.addEventListener('scroll', function (event) {
       'custom_bool': true,
       'custom_int': Date.now(),
       'custom_string': 'hello',
-      '$journeys_title':'custom title',
+      '$journeys_title':journeyTitle,
       '$og_title': 'Title',
       '$og_description': 'Description',
       '$og_image_url':'http://lorempixel.com/400/400'
@@ -88,8 +88,8 @@ window.addEventListener('scroll', function (event) {
 <body>
   <div id="contianer">
         <div id="section1">
-        <button onclick="showJourney()">Click me</button>
-        <button onclick="showJourney()">Click me</button>
+        <button onclick="showJourney('journey 1')">show journey 1</button>
+        <button onclick="showJourney('journey 2')">show journey 2</button>
         <p>
         1111111111111111111111111111
         1111111111111111111111111
