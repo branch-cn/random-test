@@ -33,7 +33,42 @@
 
     function removeTrackingParam() {
       localStorage.removeItem(clickTimestampKey);
-}
+    
+    }
+
+    function showJourney(journeyTitle) {
+
+      {% comment %} // close
+      branch.closeJourney(function(err, data) {
+        console.log(err, data);
+      }); {% endcomment %}
+
+
+
+      // optional additional deep link data
+      var linkData = {
+        campaign: 'content 123',
+        channel: 'facebook',
+        feature: 'dashboard',
+        stage: 'new user',
+        tags: [ 'tag1', 'tag2', 'tag3' ],
+        alias: '',
+        data: {
+          'custom_bool': true,
+          'custom_int': Date.now(),
+          'custom_string': 'hello',
+          '$journeys_title':journeyTitle,
+          '$og_title': 'Title',
+          '$og_description': 'Description',
+          '$og_image_url':'http://lorempixel.com/400/400'
+        }
+      };
+
+      branch.setBranchViewData(linkData);
+
+      // reopen
+      branch.track("pageview");
+    }
 
   </script>
 </head>
@@ -41,5 +76,8 @@
   <h2 id="h2text" >empty</h2>
   <div></div>
   <button onclick="removeTrackingParam()">What is the time?</button>
+<div></div>
+          <button onclick="showJourney('journey 1')">show journey 1</button>
+        <button onclick="showJourney('journey 2')">show journey 2</button>
 </body>
 </html>
