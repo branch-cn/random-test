@@ -36,13 +36,13 @@
     
     }
 
-    function showJourney(journeyTitle) {
 
+    function closeJourney() {
       branch.closeJourney(function(err, data) {
         console.log(err, data);
       }); 
-
-
+    }
+    function showJourney(journeyTitle) {
 
       // optional additional deep link data
       var linkData = {
@@ -76,7 +76,7 @@
   <div></div>
   <button onclick="removeTrackingParam()">What is the time?</button>
 <div></div>
-          <button onclick="showJourney('journey 1')">show journey 1</button>
+        <button onclick="showJourney('journey 1')">show journey 1</button>
         <button onclick="showJourney('journey 2')">show journey 2</button>
 </body>
 </html>
