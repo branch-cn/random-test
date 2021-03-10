@@ -18,7 +18,7 @@ function isInViewport(element) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
-
+/*
 var sec1 = document.querySelector('#section1');
 var sec2 = document.querySelector('#section2');
 var sec3 = document.querySelector('#section3');
@@ -40,7 +40,7 @@ window.addEventListener('scroll', function (event) {
   }
 }, false);
 
-
+*/
 
     
     // init Branch
@@ -52,36 +52,36 @@ window.addEventListener('scroll', function (event) {
 
     function showJourney(journeyTitle) {
 
-  // close
-  branch.closeJourney(function(err, data) {
-    console.log(err, data);
-  });
+      {% comment %} // close
+      branch.closeJourney(function(err, data) {
+        console.log(err, data);
+      }); {% endcomment %}
 
 
 
-  // optional additional deep link data
-  var linkData = {
-    campaign: 'content 123',
-    channel: 'facebook',
-    feature: 'dashboard',
-    stage: 'new user',
-    tags: [ 'tag1', 'tag2', 'tag3' ],
-    alias: '',
-    data: {
-      'custom_bool': true,
-      'custom_int': Date.now(),
-      'custom_string': 'hello',
-      '$journeys_title':journeyTitle,
-      '$og_title': 'Title',
-      '$og_description': 'Description',
-      '$og_image_url':'http://lorempixel.com/400/400'
-    }
-  };
+      // optional additional deep link data
+      var linkData = {
+        campaign: 'content 123',
+        channel: 'facebook',
+        feature: 'dashboard',
+        stage: 'new user',
+        tags: [ 'tag1', 'tag2', 'tag3' ],
+        alias: '',
+        data: {
+          'custom_bool': true,
+          'custom_int': Date.now(),
+          'custom_string': 'hello',
+          '$journeys_title':journeyTitle,
+          '$og_title': 'Title',
+          '$og_description': 'Description',
+          '$og_image_url':'http://lorempixel.com/400/400'
+        }
+      };
 
-  branch.setBranchViewData(linkData);
+      branch.setBranchViewData(linkData);
 
-  // reopen
-  branch.track("pageview");
+      // reopen
+      branch.track("pageview");
     }
   </script>
 </head>
