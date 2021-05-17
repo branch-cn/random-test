@@ -36,6 +36,20 @@
     
     }
 
+    function changeJourneyLink() {
+      var linkData = {
+        data: {
+          '$journeys_cta': "https://www.google.com",
+          '$journeys_title':"google",
+          '$journeys_description':"desp",
+          '$journeys_button_get_has_app':"打开 google has app",
+          '$journeys_button_get_no_app':"打开 google no app",
+          '$journeys_icon_image_url':"http://lorempixel.com/400/400",
+        }
+      };
+      branch.setBranchViewData(linkData);
+    }
+
 
     function closeJourney() {
 
@@ -72,6 +86,6 @@
   <button onclick="removeTrackingParam()">What is the time?</button>
 <div></div>
         <button onclick="showJourney('journey 1')">show journey 1</button>
-        <button onclick="showJourney('journey 2')">show journey 2</button>
+        <button onclick="changeJourneyLink()">change journey linnk</button>
 </body>
 </html>
